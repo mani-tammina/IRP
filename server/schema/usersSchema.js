@@ -9,4 +9,4 @@ var usersSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model(
-    'user', usersSchema, 'Users');
+    'user', usersSchema, 'users');

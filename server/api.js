@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 var express = require('express');
-const usersSchema = require('./usersSchema');
-const jobPostSchema = require('./jobPostSchema');
-const applicationSchema = require('./applicationSchema');
+const usersSchema = require('./schema/usersSchema');
+const jobPostSchema = require('./schema/jobPostSchema');
+const applicationSchema = require('./schema/applicationSchema');
 var router = express.Router();
 // var StudentModel = require('./studentschema');
 
 // Connecting to database
 // var qry = 'mongodb+srv://mani:mani@cluster0.xiv7jmq.mongodb.net/test'
-var query = 'mongodb+srv://mani:mani@cluster0.xiv7jmq.mongodb.net/test'
+var query = 'mongodb+srv://mani:mani@cluster0.xiv7jmq.mongodb.net/IRP'
 
 const db = (query);
 mongoose.Promise = global.Promise;
@@ -24,7 +24,7 @@ mongoose.connect(db, {
 
 
 //User API starts here
-router.get('/saveUser', function (req, res) {
+router.post('/saveUser', function (req, res) {
     var newUser = new usersSchema(req.body);
 
     newUser.save(function (err, data) {
@@ -37,7 +37,7 @@ router.get('/saveUser', function (req, res) {
     });
 });
 
-router.get('/findallUsers', function (req, res) {
+router.get('/getusers', function (req, res) {
     usersSchema.find(function (err, data) {
         if (err) {
             console.log(err);
@@ -76,9 +76,8 @@ router.post('/deleteUser', function (req, res) {
 //User APIs ended here
 
 //Job APIs started here
-router.get('/saveJob', function (req, res) {
+router.post('/saveJob', function (req, res) {
     var newJob = new jobPostSchema(req.body);
-
     newJob.save(function (err, data) {
         if (err) {
             console.log(error);
@@ -89,7 +88,7 @@ router.get('/saveJob', function (req, res) {
     });
 });
 
-router.get('/findallJobs', function (req, res) {
+router.get('/getJobs', function (req, res) {
     jobPostSchema.find(function (err, data) {
         if (err) {
             console.log(err);
@@ -128,7 +127,7 @@ router.post('/deleteJob', function (req, res) {
 //Job APIs ended here
 
 //Application APIs started here 
-router.get('/saveApplication', function (req, res) {
+router.post('/saveApplication', function (req, res) {
     var newApplication = new applicationSchema(req.body);
 
     newApplication.save(function (err, data) {
@@ -141,7 +140,7 @@ router.get('/saveApplication', function (req, res) {
     });
 });
 
-router.get('/findallApplications', function (req, res) {
+router.get('/getapplications', function (req, res) {
     applicationSchema.find(function (err, data) {
         if (err) {
             console.log(err);
