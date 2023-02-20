@@ -12,16 +12,16 @@ export class ApiServicesService {
 
   getUsers() {
     console.log('caling');
-    return this.http.get('http://localhost:3000/api/findallJobs');
+    return this.http.get('http://localhost:3000/api/getusers');
   }
 
   getJobs() {
     console.log('caling');
-    return this.http.get('http://localhost:3000/api/findallJobs');
+    return this.http.get('http://localhost:3000/api/getjobs');
   }
 
   getApplications() {
     console.log('caling');
-    return this.http.get('http://localhost:3000/api/findallJobs');
+    return this.http.get('http://localhost:3000/api/getapplications');
   }
 }
