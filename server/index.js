@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const api = require('./api');
+const mailer = require('./nodemailer');
 const port = 3000;
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/api', api);
+app.use('/email', mailer);
 
 app.use(express.static('../server/irp'))
 app.set('view engine', 'pug');
