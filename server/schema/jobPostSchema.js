@@ -1,11 +1,16 @@
 var mongoose = require('mongoose');
 
 var jobPostsSchema = new mongoose.Schema({
-    userId: Number,
-    name: String,
-    type: String,
-    email: String,
-    password: String
+    _id: Number,
+    jobtitle: String,
+    jobdesc: String,
+    jobtype: String,
+    skills: String,
+    experience: String,
+    ctc: String,
+    location: String,
+    joinperiod: String,
+    status: String
 });
 
 module.exports = mongoose.model(
