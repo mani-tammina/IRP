@@ -1,0 +1,307 @@
+<section class=" main">
+    <div class="form">
+        <h2 class="text-center">Employment Application</h2>
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>Personal Information:</h4>
+            </div>
+            <div class="row">
+                <h5 class="py-2">Full Name</h5>
+                <div class="col-4 pe-0">
+                    <input class="input-styles" type="text" />
+                    <label class="form-label d-block">First Name</label>
+                </div>
+                <div class="col-4 pe-0">
+                    <input class="input-styles" type="text" />
+                    <label class="form-label d-block">Middle Name</label>
+                </div>
+                <div class="col-4 pe-0">
+                    <input class="input-styles" name="last-name" type="text" required />
+                    <label class="form-label d-block">Last Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="adress my-3">
+            <div class="row">
+                <div class="col pe-0">
+                    Address
+                </div>
+                <div class="col pe-0">
+                    <div>
+                        <input class="input-styles d-block" type="text">
+                        <label for="">Street Address</label>
+                    </div>
+                    <div>
+                        <input class="input-styles d-block" type="text">
+                        <label for="">Street Address</label>
+                    </div>
+                    <div class="d-flex">
+                        <div class="sun-width">
+                            <input class="input-styles d-block" type="text">
+                            <label class="d-block" for="">Street Address</label>
+                        </div>
+                        <div class="sun-width ms-auto">
+                            <input class="input-styles d-block" type="text">
+                            <label class="d-block" for="">Street Address</label>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="sun-width">
+                            <input class="input-styles d-block" type="text">
+                            <label class="d-block" for="">Street Address</label>
+                        </div>
+                        <div class="sun-width ms-auto">
+                            <select class="w-100 drop-down">
+                                <option>One</option>
+                                <option>One</option>
+                                <option>One</option>
+                            </select>
+                            <label class="d-block" for="">Street Address</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Phone Number</label>
+                <input class="input-styles" type="text" />
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">E-mail</label>
+                <input class="input-styles" type="text" />
+                <span>example@example.com</span>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6">
+                <div class="col">
+                    Birth Date
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4 pe-0">
+                        <input class="input-styles d-block" type="text">
+                        <span>Month</span>
+
+                    </div>
+                    <div class="col-4 pe-0">
+                        <input class="input-styles d-block" type="text">
+                        <span>Date</span>
+
+                    </div>
+                    <div class="col-4 pe-0">
+                        <input class="input-styles d-block" type="text">
+                        <span>Year</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6">
+                <div class="col">
+                    Are You a U.S. Citizen?
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-6 pe-0 d-flex align-items-center">
+                        <input class="input-styles d-block radio-styles" type="radio">
+                        <span class="ms-2">Yes</span>
+                    </div>
+                    <div class="col-6 pe-0 d-flex align-items-center">
+                        <input class="input-styles d-block radio-styles" type="radio">
+                        <span class="ms-2">No</span>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>Employment Desired :</h4>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Highest Degree</label>
+                <input class="input-styles" type="text" />
+                <span>Name of High School Attended</span>
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Number of Years Attended</label>
+                <input class="input-styles" type="text" />
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Area of Study/Degree</label>
+                <input class="input-styles" type="text" />
+                <span>Name of High School Attended</span>
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Graduated?</label>
+                <!-- <input class="input-styles" type="text" /> -->
+                <div>
+                    <div class="col-4 pe-0">
+                        <input class="input-styles  radio-styles" type="radio">
+                        <span class="ms-2">Yes</span>
+                    </div>
+                    <div class="col-4 pe-0">
+                        <input class="input-styles radio-styles" type="radio">
+                        <span class="ms-2">No</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div style="text-align:center">
+          <p>Upload Video Resume</p>
+          <video class="video" #liveVideo autoplay controls></video>
+          <span class="m-1"></span>
+          <video class="video" style="width:480px !important;" controls #recordedVideo></video>
+          <br>
+          <button class="btn btn-success btn-lg" *ngIf="!isRecording" (click)="startVideoRecording()">Start Recording</button>
+          <button class="btn btn-warning btn-lg" *ngIf="isRecording" (click)="stopVideoRecording()">Stop Recording</button>
+        </div> -->
+
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>Current Employement :</h4>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Current Employer</label>
+                <input class="input-styles" type="text" />
+                <small>Name of Current Employer or NONE if not Employed</small>
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Position</label>
+                <input class="input-styles" type="text" />
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Previous Salary ($):</label>
+                <input class="input-styles" type="text" />
+                <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Reason for Leaving?</label>
+                <input class="input-styles" type="text" />
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Start Date</label>
+                <input class="input-styles" type="date" />
+                <small>date</small>
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">End Date</label>
+                <input class="input-styles" type="date" />
+                <small>date</small>
+            </div>
+        </div>
+
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>References:</h4>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Reference Name:</label>
+                <input class="input-styles" type="text" />
+                <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Relationship</label>
+                <input class="input-styles" type="text" />
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Years Acquainted</label>
+                <input class="input-styles" type="text" />
+                <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
+            </div>
+            <div class="col-6 pe-0">
+                <label class="form-label d-block">Phone Number</label>
+                <input class="input-styles" type="tel" placeholder="(000)000-0000" />
+            </div>
+        </div>
+        <div class="col-6 pe-0">
+            <label class="form-label d-block">E-mail</label>
+            <input class="input-styles" type="text" />
+            <small>example@example.com</small>
+        </div>
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>Resume:</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col pe-0">
+                Resume:
+                <input type="file" class="mx-1">
+            </div>
+        </div>
+        <br>
+        <div class="header-small">
+            <div class="sub-heading">
+                <h4>Send Application:</h4>
+            </div>
+        </div>
+        <p>
+            By clicking the submit button below, I cerity that all of the information provided by me on this application
+            is
+            true and complete, and I understand that if any false information, ommissions, or misrepresentations are
+            discovered, my application may be rejected and, if I am employed, my employement may be terminated at any
+            time.
+
+            In consideration of my employment, I agree to conform to the company's rules and regulations, and I agree
+            that my
+            employment and compenstation can be terminated, with or without cause, and with or without notice, at any
+            time, at
+            either my or the company's option.
+
+            I also understand and agree that the terms and conditions of my employment may be changed, with or without
+            cause,
+            and with or without notice, at any time by the company.
+        </p>
+        <div class="row">
+            <div class="col pe-0">
+                <b> Upload your Signature:</b>
+                <input type="file" class="mx-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pe-0">
+                <b>Date:</b>
+                <input type="date" class="mx-2">
+            </div>
+        </div>
+
+        <div class="header-small">
+            <div class="sub-heading">
+                <!-- <h4>References:</h4> -->
+            </div>
+        </div>
+        <div class="text-center pb-2">
+            <button type="button" class="btn btn-success">submit</button>
+        </div>
+    </div>
+
+
+</section>
