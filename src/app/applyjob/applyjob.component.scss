@@ -1,123 +1,14 @@
-.main {
+.card{
+    width: 50%;
+    margin: auto;
     background-color: #f3f3fe;
-
-    .form {
-        background-color: #ffffff;
-        width: 55%;
-        margin: auto;
-        border-radius: 10px;
-        padding: 0 50px;
-
-        h2 {
-            padding: 14px 0 34px 0;
-        }
-
-        .header-small {
-
-            .sub-heading {
-                h4 {
-                    font-size: 1.5rem;
-                }
-
-                border-bottom: 1px solid #d0d0d7;
-                padding-bottom: 16px;
-                margin-bottom: 3rem;
-            }
-
-
-        }
+    border:none;
+    padding: 10px;
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-.input-styles {
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px #d0d0d7;
-    border-style: solid;
-    width: 100%;
-    height: 40px;
-    padding-right: 0;
-}
 
-.drop-down {
-    height: 40px;
-    border-radius: 5px;
-    border: 1px #d0d0d7;
-    border-style: solid;
-    width: 100%;
-}
-
-.sun-width {
-    width: 48%;
-}
-
-.radio-styles {
-    width: 15px;
-    height: 15px;
-}
-
-.school-block {
-    border-bottom: 1px solid;
-    padding-bottom: 2rem;
-}
-.address-grid{
-    display: grid;
-    grid-template-columns: 20% 80%;
-}
-.address-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.abcd{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    
-    mat-form-field{
-        margin: 5px;
-    }
-}
-.contact-grid{
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-    mat-form-field{
-        margin: 5px;
-    }
-}
-.dob-grid{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 50% 50%;
-    .text{
-        margin-left: 10px;
-    }
-}
-.education-grid{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 50% 50%;
-
-    mat-form-field{
-        margin: 5px;
-    }
-    .text{
-        margin-left: 10px;
-    }
-}
-.employement-grid{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    
-    mat-form-field{
-        margin: 5px;
-    }
-}
-.references-grid{
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-    mat-form-field{
-        margin: 5px;
-    }
-}
