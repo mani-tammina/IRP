@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var express = require('express');
+var router = express.Router();
+
 const usersSchema = require('./schema/usersSchema');
 const jobPostSchema = require('./schema/jobPostSchema');
 const applicationSchema = require('./schema/applicationSchema');
-var router = express.Router();
 // var StudentModel = require('./studentschema');
 
 // Connecting to database
