@@ -1,167 +1,118 @@
 <section class=" main">
     <div class="form">
-        <h2 class="text-center">Employment Application</h2>
+        <form action="">
+            <h2 class="text-center">Employment Application</h2>
         <div class="header-small">
             <div class="sub-heading">
                 <h4>Personal Information:</h4>
             </div>
             <div class="row">
                 <h5 class="py-2">Full Name</h5>
-                <div class="col-4 pe-0">
-                    <input class="input-styles" type="text" />
-                    <label class="form-label d-block">First Name</label>
-                </div>
-                <div class="col-4 pe-0">
-                    <input class="input-styles" type="text" />
-                    <label class="form-label d-block">Middle Name</label>
-                </div>
-                <div class="col-4 pe-0">
-                    <input class="input-styles" name="last-name" type="text" required />
-                    <label class="form-label d-block">Last Name</label>
-                </div>
+                <mat-form-field class="col-4">
+                    <input matInput class="input-styles" type="text" required/>
+                    <mat-label class="form-label">First Name</mat-label>
+                </mat-form-field>
+                <mat-form-field class="col-4">
+                    <input matInput class="input-styles" type="text" required/>
+                    <mat-label class="form-label">Middle Name</mat-label>
+                </mat-form-field>
+                <mat-form-field class="col-4">
+                    <input matInput class="input-styles" name="last-name" type="text" required/>
+                    <mat-label class="form-label">Last Name</mat-label>
+                </mat-form-field>
             </div>
         </div>
-        <div class="adress my-3">
-            <div class="row">
-                <div class="col pe-0">
+        <div class="adress">
+            <div class="address-grid">
+                <div class="address-section">
                     Address
                 </div>
-                <div class="col pe-0">
-                    <div>
-                        <input class="input-styles d-block" type="text">
-                        <label for="">Street Address</label>
-                    </div>
-                    <div>
-                        <input class="input-styles d-block" type="text">
-                        <label for="">Street Address</label>
-                    </div>
-                    <div class="d-flex">
-                        <div class="sun-width">
-                            <input class="input-styles d-block" type="text">
-                            <label class="d-block" for="">Street Address</label>
-                        </div>
-                        <div class="sun-width ms-auto">
-                            <input class="input-styles d-block" type="text">
-                            <label class="d-block" for="">Street Address</label>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="sun-width">
-                            <input class="input-styles d-block" type="text">
-                            <label class="d-block" for="">Street Address</label>
-                        </div>
-                        <div class="sun-width ms-auto">
-                            <select class="w-100 drop-down">
-                                <option>One</option>
-                                <option>One</option>
-                                <option>One</option>
-                            </select>
-                            <label class="d-block" for="">Street Address</label>
-                        </div>
-                    </div>
+                <div class="abcd">
+                    <mat-form-field>
+                        <input matInput class="input-styles" type="text" required>
+                        <mat-label for="">Street Address</mat-label>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput class="input-styles" type="text" required>
+                        <mat-label for="">Street Address</mat-label>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput class="input-styles" type="text" required>
+                        <mat-label for="">Street Address</mat-label>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput class="input-styles" type="text" required>
+                        <mat-label for="">Street Address</mat-label>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput class="input-styles" type="text" required>
+                        <mat-label for="">Street Address</mat-label>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label for="">Street Address</mat-label>
+                        <mat-select >
+                            <mat-option value="1">One</mat-option>
+                            <mat-option value="2">One</mat-option>
+                            <mat-option value="3">One</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Phone Number</label>
-                <input class="input-styles" type="text" />
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">E-mail</label>
-                <input class="input-styles" type="text" />
-                <span>example@example.com</span>
-            </div>
+        <div class="contact-grid">
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput class="input-styles" type="text" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput class="input-styles" type="text" />
+                <mat-hint>example@example.com</mat-hint>
+            </mat-form-field>
         </div>
-        <div class="row my-3">
-            <div class="col-6">
-                <div class="col">
-                    Birth Date
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-4 pe-0">
-                        <input class="input-styles d-block" type="text">
-                        <span>Month</span>
-
-                    </div>
-                    <div class="col-4 pe-0">
-                        <input class="input-styles d-block" type="text">
-                        <span>Date</span>
-
-                    </div>
-                    <div class="col-4 pe-0">
-                        <input class="input-styles d-block" type="text">
-                        <span>Year</span>
-
-                    </div>
-                </div>
-            </div>
+        <div class="dob-grid">
+            <mat-form-field appearance="fill">
+                <mat-label>D.O.B</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <mat-label class="text">Are You Citizen?</mat-label>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
         </div>
-        <div class="row my-3">
-            <div class="col-6">
-                <div class="col">
-                    Are You a U.S. Citizen?
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6 pe-0 d-flex align-items-center">
-                        <input class="input-styles d-block radio-styles" type="radio">
-                        <span class="ms-2">Yes</span>
-                    </div>
-                    <div class="col-6 pe-0 d-flex align-items-center">
-                        <input class="input-styles d-block radio-styles" type="radio">
-                        <span class="ms-2">No</span>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+        
         <div class="header-small">
             <div class="sub-heading">
                 <h4>Employment Desired :</h4>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Highest Degree</label>
-                <input class="input-styles" type="text" />
-                <span>Name of High School Attended</span>
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Number of Years Attended</label>
-                <input class="input-styles" type="text" />
-            </div>
+        <div class="education-grid">
+            <mat-form-field class="">
+                <mat-label>Highest Degree</mat-label>
+                <input matInput type="text" />
+                <mat-hint>Name of High School Attended</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="">
+                <mat-label>Number of Years Attended</mat-label>
+                <input matInput type="text" />
+            </mat-form-field>
         </div>
 
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Area of Study/Degree</label>
-                <input class="input-styles" type="text" />
-                <span>Name of High School Attended</span>
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Graduated?</label>
-                <!-- <input class="input-styles" type="text" /> -->
-                <div>
-                    <div class="col-4 pe-0">
-                        <input class="input-styles  radio-styles" type="radio">
-                        <span class="ms-2">Yes</span>
-                    </div>
-                    <div class="col-4 pe-0">
-                        <input class="input-styles radio-styles" type="radio">
-                        <span class="ms-2">No</span>
-                    </div>
-                </div>
-            </div>
+        <div class="education-grid">
+            <mat-form-field>
+                <mat-label class="form-label d-block">Area of Study/Degree</mat-label>
+                <input matInput class="input-styles" type="text" />
+                <mat-hint>Name of High School Attended</mat-hint>
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <mat-label class="text">Graduated?</mat-label>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
         </div>
-
-
-
         <!-- <div style="text-align:center">
           <p>Upload Video Resume</p>
           <video class="video" #liveVideo autoplay controls></video>
@@ -171,45 +122,46 @@
           <button class="btn btn-success btn-lg" *ngIf="!isRecording" (click)="startVideoRecording()">Start Recording</button>
           <button class="btn btn-warning btn-lg" *ngIf="isRecording" (click)="stopVideoRecording()">Stop Recording</button>
         </div> -->
-
         <div class="header-small">
             <div class="sub-heading">
                 <h4>Current Employement :</h4>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Current Employer</label>
-                <input class="input-styles" type="text" />
-                <small>Name of Current Employer or NONE if not Employed</small>
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Position</label>
-                <input class="input-styles" type="text" />
-            </div>
+        <div class="employement-grid">
+            <mat-form-field>
+                <mat-label>Current Employer</mat-label>
+                <input matInput type="text" />
+                <mat-hint>If Current Employer or none if not Employed</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Position</mat-label>
+                <input matInput type="text" />
+            </mat-form-field>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Previous Salary ($):</label>
-                <input class="input-styles" type="text" />
+        <div class="employement-grid">
+            <mat-form-field>
+                <mat-label>Previous Salary ($):</mat-label>
+                <input matInput type="text" />
                 <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Reason for Leaving?</label>
-                <input class="input-styles" type="text" />
-            </div>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Reason for Leaving?</mat-label>
+                <input matInput type="text" />
+            </mat-form-field>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Start Date</label>
-                <input class="input-styles" type="date" />
-                <small>date</small>
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">End Date</label>
-                <input class="input-styles" type="date" />
-                <small>date</small>
-            </div>
+        <div class="employement-grid">
+            <mat-form-field appearance="fill">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
         </div>
 
         <div class="header-small">
@@ -217,41 +169,42 @@
                 <h4>References:</h4>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Reference Name:</label>
-                <input class="input-styles" type="text" />
+        <div class="references-grid">
+            <mat-form-field>
+                <mat-label>Reference Name</mat-label>
+                <input matInput type="text"/>
                 <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Relationship</label>
-                <input class="input-styles" type="text" />
-            </div>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Relationship</mat-label>
+                <input matInput type="text"/>
+            </mat-form-field>
         </div>
 
-        <div class="row my-3">
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Years Acquainted</label>
-                <input class="input-styles" type="text" />
+        <div class="references-grid">
+            <mat-form-field>
+                <mat-label>Years Acquainted</mat-label>
+                <input matInput type="text" />
                 <!-- <small>Name of Current Employer or NONE if not Employed</small> -->
-            </div>
-            <div class="col-6 pe-0">
-                <label class="form-label d-block">Phone Number</label>
-                <input class="input-styles" type="tel" placeholder="(000)000-0000" />
-            </div>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="tel" placeholder="(000)000-0000"/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput type="text"/>
+                <mat-hint>example@example.com</mat-hint>
+            </mat-form-field>
         </div>
-        <div class="col-6 pe-0">
-            <label class="form-label d-block">E-mail</label>
-            <input class="input-styles" type="text" />
-            <small>example@example.com</small>
-        </div>
+       
         <div class="header-small">
             <div class="sub-heading">
                 <h4>Resume:</h4>
             </div>
         </div>
 
-        <div class="row">
+        <div class="resume-grid">
             <div class="col pe-0">
                 Resume:
                 <input type="file" class="mx-1">
@@ -288,8 +241,8 @@
         </div>
         <div class="row">
             <div class="col pe-0">
-                <b>Date:</b>
-                <input type="date" class="mx-2">
+                <mat-label>Date:</mat-label>
+                <input matInput type="date" class="mx-2">
             </div>
         </div>
 
@@ -298,8 +251,10 @@
                 <!-- <h4>References:</h4> -->
             </div>
         </div>
+        </form>
+        
         <div class="text-center pb-2">
-            <button type="button" class="btn btn-success">submit</button>
+            <button mat-raised-button color="primary">submit</button>
         </div>
     </div>
 

@@ -1,128 +1,77 @@
-<section class="form-section">
-    <div class="mb-5">
-        <h2 class="heading">WE ARE HIRING</h2>
-    </div>
-    <form>
-        <div class="main-sec d-flex">
-            <div class="left-side">
-                <div class="des-sec mb-4">
-                    <label style="font-size: 18px;
-        font-weight: bold;width: 165px;">Designation</label>
-                    <select id="designation">
-                        <option value="A">Angular Developer</option>
-                        <option value="B">UI/UX Developer</option>
-                        <option value="C">Appian Developer</option>
-                        <option value="D">Mendix Developer</option>
-                        <option value="D">QA Engineer</option>
-                    </select>
-                </div>
-
-                <div class="exp-sec mb-4">
-                    <label style="font-size: 18px;
-        font-weight: bold;width: 165px;"><sup>*</sup>Experience</label>
-                    <select id="experience">
-                        <option value="A">1-3</option>
-                        <option value="B">3-5</option>
-                        <option value="C">5-8</option>
-                        <option value="D">8+</option>
-                    </select>
-                </div>
-
-                <div class="qualification-sec mb-4">
-                    <label style="font-size: 18px;
-        font-weight: bold;width: 165px;"><sup>*</sup>Qualification</label>
-                    <input type="radio" id="contactChoice1" name="contact" value="btech" />
-                    <label class="ms-2"> BTECH</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice2" name="contact" value="mtech" />
-                    <label class="ms-2">MTECH</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice3" name="contact" value="mca" />
-                    <label class="ms-2">MCA</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice4" name="contact" value="ms" />
-                    <label class="ms-2">MS</label>
-                </div>
-
-
-                <div class="join-sec mb-4">
-                    <label style="font-size: 18px;
-        font-weight: bold;width: 165px;"><sup>*</sup>Joining Period</label>
-                    <input type="radio" id="contactChoice5" name="contact1" value="immediately" />
-                    <label class="ms-2"> Immediately</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice6" name="contact1" value="1month" />
-                    <label class="ms-2">1 Month</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice7" name="contact1" value="3months" />
-                    <label class="ms-2">3 Months</label>
-                </div>
-
-                <div class="ctc-sec mb-4">
-                    <label style="font-size: 18px;
-        font-weight: bold;width: 165px;"><sup>*</sup>CTC Offered</label>
-                    <input type="radio" id="contactChoice8" name="contact2" value="3-5lpa" />
-                    <label class="ms-2"> 3-5 LPA</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice9" name="contact2" value="5-7lpa" />
-                    <label class="ms-2">5-7 LPA</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice10" name="contact2" value="7-10lpa" />
-                    <label class="ms-2">7-10 LPA</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice11" name="contact2" value="negotiable" />
-                    <label class="ms-2">Negotiable</label>
-                </div>
+<section class="">
+    <h2>We are Hiring</h2>
+    <form action="">
+        <div class="abcd">
+            <div class="form-section">
+                <mat-form-field>
+                    <mat-label>Designation</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option value="Angular Developer">Angular Developer</mat-option>
+                        <mat-option value="UI/UX Developer">UI/UX Developer</mat-option>
+                        <mat-option value="Appian Developer">Appian Developer</mat-option>
+                        <mat-option value="Mendix Developer">Mendix Developer</mat-option>
+                        <mat-option value="QA Engineer">QA Engineer</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Experience</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option value="1-3">1-3</mat-option>
+                        <mat-option value="3-5">3-5</mat-option>
+                        <mat-option value="5-8">5-8</mat-option>
+                        <mat-option value="8+">8+</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-label class="text">*Qualification</mat-label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">BTECH</mat-radio-button>
+                    <mat-radio-button value="2">MTECH</mat-radio-button>
+                    <mat-radio-button value="3">MCA</mat-radio-button>
+                    <mat-radio-button value="4">MS</mat-radio-button>
+                </mat-radio-group>
+                <mat-label class="text">*Joining Period</mat-label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Immediately</mat-radio-button>
+                    <mat-radio-button value="2">1 Month</mat-radio-button>
+                    <mat-radio-button value="3">3 Month</mat-radio-button>
+                </mat-radio-group>
+                <mat-label class="text">*CTC Offered</mat-label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">3-5 LPA</mat-radio-button>
+                    <mat-radio-button value="2">5-7 LPA</mat-radio-button>
+                    <mat-radio-button value="3">7-10 LPA</mat-radio-button>
+                    <mat-radio-button value="4">Negotiable</mat-radio-button>
+                </mat-radio-group>
             </div>
-
-
-
-            <div class="right-side">
-                <div class="skills-sec mb-4">
-                    <label style="font-size: 18px;
-            font-weight: bold;width: 165px;"><sup>*</sup>Skills Required</label>
-                    <input type="text">
-                </div>
-
-                <div class="req-sec mb-4">
-                    <label style="font-size: 18px;
-            font-weight: bold;width: 165px;"><sup>*</sup>Requirement</label>
-                    <input type="text">
-                </div>
-
-                <div class="reloc-sec mb-4">
-                    <label style="font-size: 18px;
-                font-weight: bold;width: 165px;"><sup>*</sup>Relocation Place</label>
-                    <input type="text">
-                </div>
-
-
-                <div class="join-sec mb-4">
-                    <label style="font-size: 18px;
-                    font-weight: bold;width: 165px;"><sup>*</sup>Work Shifts</label>
-                    <input type="radio" id="contactChoice12" name="contact3" value="immediately" />
-                    <label class="ms-2"> Day</label>
-                    &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice13" name="contact3" value="1month" />
-                    <label class="ms-2"> Night</label>
-                </div>
-
-
-                <div class="req-sec mb-4">
-                    <label style="font-size: 18px;
-                        font-weight: bold;width: 165px;"><sup>*</sup>Date</label>
-                    <input type="date">
-                </div>
-
+            <div class="form-section">
+                <mat-form-field>
+                    <mat-label>*Skills Required</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>*Requirement</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>*Relocation Place</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                <mat-label class="text">*Work Shifts</mat-label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Day</mat-radio-button>
+                    <mat-radio-button value="2">Night</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
             </div>
         </div>
-
-        <div class="val-btns">
-            <button type="button" class="btn btn-outline-primary">Cancel</button>
-            <button type="button" class="btn btn-primary float-end">Submit</button>
+        <div class="form-button">
+            <button mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button color="warn">Cancel</button>
         </div>
-
-
-
     </form>
 </section>

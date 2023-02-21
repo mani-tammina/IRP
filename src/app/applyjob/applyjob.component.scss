@@ -60,3 +60,64 @@
     border-bottom: 1px solid;
     padding-bottom: 2rem;
 }
+.address-grid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.address-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.abcd{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    mat-form-field{
+        margin: 5px;
+    }
+}
+.contact-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    mat-form-field{
+        margin: 5px;
+    }
+}
+.dob-grid{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    .text{
+        margin-left: 10px;
+    }
+}
+.education-grid{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+
+    mat-form-field{
+        margin: 5px;
+    }
+    .text{
+        margin-left: 10px;
+    }
+}
+.employement-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+    mat-form-field{
+        margin: 5px;
+    }
+}
+.references-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    mat-form-field{
+        margin: 5px;
+    }
+}

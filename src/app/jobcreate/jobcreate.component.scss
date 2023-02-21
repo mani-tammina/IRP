@@ -1,22 +1,41 @@
-section.form-section {
-    width: 75%;
-    margin: auto;
-}
-
-.heading {
+h2{
+    background-color: #3f51b5;
+    color: white;
     text-align: center;
-    margin-left: 5rem;
-    margin-top: 3rem;
+    margin: 20px 40px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.text{
+    font-weight: 600;
+}   
+.abcd{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px 30px;
+
+    .form-section{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+.form-button{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 20px 40px;
+
+    button{
+        margin: 5px;
+    }
 }
 
-#designation {
-    width: 35%;
-}
-
-#experience {
-    width: 35%;
-}
-
-.left-side {
-    flex: 1 1 0%;
+// mobile resolutions
+@media (min-width: 320px) and (max-width: 767px){
+    h2{
+        min-width: 100px;
+    }
+    .abcd{
+        grid-template-columns: 100%;
+    }
 }
