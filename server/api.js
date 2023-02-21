@@ -49,7 +49,7 @@ router.get('/getusers', function (req, res) {
 });
 
 router.get('/getuser/:id', function (req, res) {
-    usersSchema.find(req.params.id, function (err, data) {
+    usersSchema.find({ email: req.params.id }, function (err, data) {
         if (err) {
             console.log(err);
         }

@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
 
 var applicationSchema = new mongoose.Schema({
-    _id: Number,
-    jobID: Number,
-    candidateID: Number,
+    jobid: String,
+    candidateId: String,
+    experience: String,
+    relocate: String,
+    expectedCTC: String,
+    noticePeriod: String,
     status: String,
 });
 

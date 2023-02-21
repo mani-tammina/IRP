@@ -7,10 +7,6 @@ import { ApiServicesService } from '../services/api-services.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  username: any;
-  password: any;
-  email: any;
-  type: any;
 
   constructor(private apiService: ApiServicesService) {
 
@@ -23,8 +19,6 @@ export class RegisterComponent {
       email: 'mani@gmail.com',
       password: 'pass'
     }
-    console.log('re', data);
-
     this.apiService.addUser(data).subscribe(res => {
       console.log('add user res', res);
     })

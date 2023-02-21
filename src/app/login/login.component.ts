@@ -8,7 +8,13 @@ import { ApiServicesService } from '../services/api-services.service';
 })
 export class LoginComponent {
   constructor(private api: ApiServicesService) {
-    this.api.getJobs();
+    this.login();
+  }
+
+  login() {
+    this.api.getUserByID('mani@gmail.com').subscribe(res => {
+      console.log('res', res);
+    });
   }
 
 }
