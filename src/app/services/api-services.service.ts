@@ -18,11 +18,15 @@ export class ApiServicesService {
 
   getJobs(data:any) {
     console.log('caling2');
-    return this.http.post<any>('http://localhost:3000/api/getjobs',data).pipe(map(res => { return res}))
+    return this.http.get<any>('http://localhost:3000/api/getjobs',data)
   }
 
   getApplications() {
     console.log('caling');
     return this.http.get('http://localhost:3000/api/getapplications');
   }
+
+  saveJob(payload:any) {
+    console.log('came222')
+    return this.http.post('http://localhost:3000/api/saveJob',payload,{responseType: 'text'})}
 }

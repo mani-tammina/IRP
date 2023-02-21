@@ -8,7 +8,7 @@
                 <div class="des-sec mb-4">
                     <label style="font-size: 18px;
         font-weight: bold;width: 165px;">Designation</label>
-                    <select id="designations" [(ngModel)]="selectedVal" formControlName="Designations">
+                    <select id="designation" formControlName="jobtitle">
                         <option value="A">Angular Developer</option>
                         <option value="B">UI/UX Developer</option>
                         <option value="C">Appian Developer</option>
@@ -20,7 +20,7 @@
                 <div class="exp-sec mb-4">
                     <label style="font-size: 18px;
         font-weight: bold;width: 165px;"><sup>*</sup>Experience</label>
-                    <select  formControlName="Experience">
+                    <select  formControlName="experience">
                         <option value="A">1-3</option>
                         <option value="B">3-5</option>
                         <option value="C">5-8</option>
@@ -31,16 +31,16 @@
                 <div class="qualification-sec mb-4">
                     <label style="font-size: 18px;
         font-weight: bold;width: 165px;"><sup>*</sup>Qualification</label>
-                    <input type="radio" id="contactChoice1"  value="btech" formControlName="Qualification" />
+                    <input type="radio" id="contactChoice1"  value="btech" formControlName="jobdesc" />
                     <label class="ms-2"> BTECH</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice2"  value="mtech" formControlName="Qualification"/>
+                    <input type="radio" id="contactChoice2"  value="mtech" formControlName="jobdesc"/>
                     <label class="ms-2">MTECH</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice3"  value="mca" formControlName="Qualification"/>
+                    <input type="radio" id="contactChoice3"  value="mca" formControlName="jobdesc"/>
                     <label class="ms-2">MCA</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice4"  value="ms" formControlName="Qualification"/>
+                    <input type="radio" id="contactChoice4"  value="ms" formControlName="jobdesc"/>
                     <label class="ms-2">MS</label>
                 </div>
 
@@ -48,29 +48,29 @@
                 <div class="join-sec mb-4">
                     <label style="font-size: 18px;
         font-weight: bold;width: 165px;"><sup>*</sup>Joining Period</label>
-                    <input type="radio" id="contactChoice5"  formControlName="JoiningPeriod" value="immediately" />
+                    <input type="radio" id="contactChoice5"  formControlName="joinperiod" value="immediately" />
                     <label class="ms-2"> Immediately</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice6"  formControlName="JoiningPeriod" value="1month" />
+                    <input type="radio" id="contactChoice6"  formControlName="joinperiod" value="1month" />
                     <label class="ms-2">1 Month</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice7"  formControlName="JoiningPeriod" value="3months" />
+                    <input type="radio" id="contactChoice7"  formControlName="joinperiod" value="3months" />
                     <label class="ms-2">3 Months</label>
                 </div>
 
                 <div class="ctc-sec mb-4">
                     <label style="font-size: 18px;
         font-weight: bold;width: 165px;"><sup>*</sup>CTC Offered</label>
-                    <input type="radio" id="contactChoice8" formControlName="CTCOffered" value="3-5lpa" />
+                    <input type="radio" id="contactChoice8" formControlName="ctc" value="3-5lpa" />
                     <label class="ms-2"> 3-5 LPA</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice9" formControlName="CTCOffered"  value="5-7lpa" />
+                    <input type="radio" id="contactChoice9" formControlName="ctc"  value="5-7lpa" />
                     <label class="ms-2">5-7 LPA</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice10" formControlName="CTCOffered" value="7-10lpa" />
+                    <input type="radio" id="contactChoice10" formControlName="ctc" value="7-10lpa" />
                     <label class="ms-2">7-10 LPA</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice11" formControlName="CTCOffered"  value="negotiable" />
+                    <input type="radio" id="contactChoice11" formControlName="ctc"  value="negotiable" />
                     <label class="ms-2">Negotiable</label>
                 </div>
             </div>
@@ -81,29 +81,29 @@
                 <div class="skills-sec mb-4">
                     <label style="font-size: 18px;
             font-weight: bold;width: 165px;"><sup>*</sup>Skills Required</label>
-                    <input formControlName="SkillsRequired" type="text">
+                    <input formControlName="skills" type="text">
                 </div>
 
                 <div class="req-sec mb-4">
                     <label style="font-size: 18px;
             font-weight: bold;width: 165px;"><sup>*</sup>Requirement</label>
-                    <input  formControlName="Requirement" type="text">
+                    <input  formControlName="requirement" type="text">
                 </div>
 
                 <div class="reloc-sec mb-4">
                     <label style="font-size: 18px;
                 font-weight: bold;width: 165px;"><sup>*</sup>Relocation Place</label>
-                    <input formControlName="RelocationPlace" type="text">
+                    <input formControlName="location" type="text">
                 </div>
 
 
                 <div class="join-sec mb-4">
                     <label style="font-size: 18px;
                     font-weight: bold;width: 165px;"><sup>*</sup>Work Shifts</label>
-                    <input type="radio" id="contactChoice12"  formControlName="WorkShifts" value="immediately" />
+                    <input type="radio" id="contactChoice12"  formControlName="status" value="immediately" />
                     <label class="ms-2"> Day</label>
                     &nbsp;&nbsp;
-                    <input type="radio" id="contactChoice13"  formControlName="WorkShifts" value="1month" />
+                    <input type="radio" id="contactChoice13"  formControlName="status" value="1month" />
                     <label class="ms-2"> Night</label>
                 </div>
 
@@ -114,7 +114,7 @@
         </div>
 
             <button type="button" class="btn btn-outline-primary">Cancel</button>
-            <button type="submit" class="btn btn-primary float-end" (click)="submit()">Submit</button>
+            <button type="submit" (click)="submit()" class="btn btn-primary float-end">Submit</button>
 
 
 

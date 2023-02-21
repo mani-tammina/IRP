@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { ApiServicesService } from '../services/api-services.service';
 
 @Component({
@@ -11,52 +12,54 @@ export class JobcreateComponent implements OnInit {
  
   jobcreate !: FormGroup;
   userlist : userDetails = new userDetails
-  job: any;
-  selectedVal: any;
-  selectedOpt: any;
-  Qualification: any;
-  JoiningPeriod :any;
-  CTCOffered : any;
-  WorkShifts : any;
-
-  constructor(private http : ApiServicesService,private formbuilder : FormBuilder,){}
+  constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,){}
 
   ngOnInit() {
     this.jobcreate = this.formbuilder.group({
-      Designations : ['',Validators.required],
-      Experience : ['',Validators.required],
-      Qualification : ['',Validators.required],
-      JoiningPeriod : ['',Validators.required],
-      CTCOffered : ['',Validators.required],
-      SkillsRequired : [''],
-      Requirement : [''],
-      RelocationPlace : [''],
-      WorkShifts : ['',Validators.required],
+      jobtitle : ['',Validators.required],
+      experience : ['',Validators.required],
+      jobdesc : ['',Validators.required],
+      joinperiod : ['',Validators.required],
+      ctc : ['',Validators.required],
+      skills : [''],
+      requirement : [''],
+      location : [''],
+      status : ['',Validators.required],
     })
   }
   submit(){
-    this.userlist.Designation = this.jobcreate.value.Designation
-    this.userlist.Experience = this.jobcreate.value.Experience
-    this.userlist.RelocationPlace = this.jobcreate.value.RelocationPlace
-    this.userlist.Requirement = this.jobcreate.value.Requirement
-    this.userlist.SkillsRequired = this.jobcreate.value.SkillsRequired
-    this.userlist.Qualification = this.jobcreate.value.Qualification
-    this.userlist.JoiningPeriod = this.jobcreate.value.JoiningPeriod
-    this.userlist.CTCOffered = this .jobcreate.value.CTCOffered
-    this.userlist.WorkShifts = this.jobcreate.value.WorkShifts
+    this.userlist.jobtitle = this.jobcreate.value.jobtitle
+    this.userlist.experience = this.jobcreate.value.experience
+    this.userlist.location = this.jobcreate.value.location
+    this.userlist.requirement = this.jobcreate.value.requirement
+    this.userlist.skills = this.jobcreate.value.skills
+    this.userlist.jobdesc = this.jobcreate.value.jobdesc
+    this.userlist.joinperiod = this.jobcreate.value.joinperiod
+    this.userlist.ctc = this .jobcreate.value.ctc
+    this.userlist.status = this.jobcreate.value.status
     console.log(this.userlist)
-    this.http.getJobs(this.userlist).subscribe(res => {console.log(res)})
+   
+    if(this.jobcreate.valid) {
+      this.auth.saveJob(this.userlist).subscribe(res => {
+        console.log(res);
+      });
+    this.jobcreate.reset();
+   if(this.userlist){
+    Swal.fire("successfully job created");
+    }} else {
+      Swal.fire("Please fill all the fields");
+    }
+   }
   }
-}
 
 export class userDetails{
-  Designation: any;
-  SkillsRequired = ''
-  Requirement = ''
-  RelocationPlace = ''
-  Experience: any;
-  Qualification: any;
-  JoiningPeriod: any;
-  CTCOffered: any;
-  WorkShifts: any;
+  jobtitle: any;
+  jobdesc: any;
+  experience: any;
+  joinperiod: any;
+  location: any;
+  skills: any;
+  ctc: any;
+  status: any;
+  requirement: any;
 }
