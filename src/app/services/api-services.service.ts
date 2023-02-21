@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ApiServicesService {
 
   constructor(private http: HttpClient) {
-    this.getJobs();
+    // this.getJobs();
   }
 
   getUsers() {
@@ -15,9 +16,9 @@ export class ApiServicesService {
     return this.http.get('http://localhost:3000/api/getusers');
   }
 
-  getJobs() {
-    console.log('caling');
-    return this.http.get('http://localhost:3000/api/getjobs');
+  getJobs(data:any) {
+    console.log('caling2');
+    return this.http.post<any>('http://localhost:3000/api/getjobs',data).pipe(map(res => { return res}))
   }
 
   getApplications() {

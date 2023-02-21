@@ -8,7 +8,7 @@ import { ApiServicesService } from '../services/api-services.service';
 })
 export class LoginComponent {
   constructor(private api: ApiServicesService) {
-    this.api.getJobs();
+    // this.api.getJobs();
   }
 
 }
