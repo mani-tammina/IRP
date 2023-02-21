@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var jobPostsSchema = new mongoose.Schema({
-    _id: Number,
     jobtitle: String,
     jobdesc: String,
     jobtype: String,

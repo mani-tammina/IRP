@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var usersSchema = new mongoose.Schema({
-    _id: Number,
     username: String,
     type: String,
     email: String,
@@ -9,4 +8,4 @@ var usersSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model(
-    'user', usersSchema, 'users');
+    'users', usersSchema, 'users');

@@ -27,19 +27,29 @@ mongoose.connect(db, {
 //User API starts here
 router.post('/saveUser', function (req, res) {
     var newUser = new usersSchema(req.body);
-
     newUser.save(function (err, data) {
         if (err) {
             console.log(error);
         }
         else {
-            res.send("Data inserted");
+            res.send(data);
         }
     });
 });
 
 router.get('/getusers', function (req, res) {
     usersSchema.find(function (err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(data);
+        }
+    });
+});
+
+router.get('/getuser/:id', function (req, res) {
+    usersSchema.find(req.params.id, function (err, data) {
         if (err) {
             console.log(err);
         }
