@@ -5,13 +5,15 @@ const api = require('./api');
 const mailer = require('./nodemailer');
 const port = 3000;
 const app = express();
-
+const cors = require('cors');
 // Parses the text as url encoded data
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Parses the text as json
 app.use(bodyParser.json());
-
+app.use(cors({
+    origin: '*'
+}));
 app.use('/api', api);
 app.use('/email', mailer);
 
