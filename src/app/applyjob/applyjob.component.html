@@ -1,30 +1,59 @@
 <section>
+    <h2 class="text-center">Apply a Job</h2>
     <form action="" class="card shadow">
-            <div class="row main">
-                <div class="col-4">
-                    <label class="form-label"><sup>*</sup>Firstname</label>
-                    <input type="text" class="form-control shadow-sm">
-                </div>
-                <div class="col-4">
-                    <label class="form-label"><sup>*</sup>Middlename</label>
-                    <input type="text" class="form-control shadow-sm">
-                </div>
-                <div class="col-4">
-                    <label class="form-label"><sup>*</sup>Lastname</label>
+        <div class="row main">
+            <div class="col-6">
+                <label class="form-label">Firstname<sup>*</sup></label>
+                <input type="text" class="form-control shadow-sm" required>
+            </div>
+            <div class="col-6">
+                <label class="form-label">Lastname<sup>*</sup></label>
+                <input type="text" class="form-control shadow-sm" required>
+            </div>
+        </div>
+        <div class="row">
+            <label for="" class="form-label mt-2">Address<sup>*</sup></label>
+            <div class="col-6">
+                <input type="text" placeholder="Street" class="form-control shadow-sm" required>
+            </div>
+            <div class="col-6">
+                <input type="text" placeholder="City" class="form-control shadow-sm" required>
+            </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-6">
+                <label class="mt-2 form-label">Experience<sup>*</sup></label>
+                <div>
                     <input type="text" class="form-control shadow-sm">
                 </div>
             </div>
-            <div class="row">
-                <label for="" class="form-label"><sup>*</sup>Address</label>
-                <div class="col-6">
-                    <input type="text" class="form-control shadow-sm">
-                </div>
-                <div class="col-6">
+            <div class="col-6">
+                <label class="mt-2 form-label">Status<sup>*</sup></label>
+                <div>
                     <input type="text" class="form-control shadow-sm">
                 </div>
             </div>
-            <div class="row">
-                
+        </div>
+        <label class="mt-2 mb-2 form-label">Ready to Relocate<sup>*</sup></label>
+        <div>
+            <input type="radio">
+            <label for="" class="ms-2">Yes</label>
+            <br>
+            <input type="radio">
+            <label for="" class="ms-2">No</label>
+        </div>
+        <div class="row">
+            <label for="" class="mt-2 form-label">Notice Period<sup>*</sup></label>
+            <div>
+                <input type="radio">
+                <label for="" class="ms-2">Immediately</label>
+                <br>
+                <input type="radio">
+                <label for="" class="ms-2">1 Month</label>
+                <br>
+                <input type="radio">
+                <label for="" class="ms-2">3 Months</label>
             </div>
+        </div>
     </form>
 </section>
