@@ -7,20 +7,23 @@ import { ApiServicesService } from '../services/api-services.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
+  username: any;
+  type: any;
+  email: any;
+  password: any;
   constructor(private apiService: ApiServicesService) {
 
   }
 
   register() {
     const data = {
-      username: 'Mani',
-      type: 'recruiter',
-      email: 'mani@gmail.com',
-      password: 'pass'
+      username: this.username,
+      type: this.type,
+      email: this.email,
+      password: this.password
     }
     this.apiService.addUser(data).subscribe(res => {
-      console.log('add user res', res);
+      console.log('User Added', res);
     })
   }
 
