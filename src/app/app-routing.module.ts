@@ -5,12 +5,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobcreateComponent } from './jobcreate/jobcreate.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'prefix' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard]},
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'jobcreate', component: JobcreateComponent },
   { path: 'applyjob', component: ApplyjobComponent },
 ];
