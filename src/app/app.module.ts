@@ -11,6 +11,15 @@ import { ApplyjobComponent } from './applyjob/applyjob.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CanditateComponent } from './canditate/canditate.component';
+import { StatusComponent } from './status/status.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UsersComponent } from './users/users.component';
+import { RecruiterComponent } from './recruiter/recruiter.component';
+import { ManagementComponent } from './management/management.component';
+import { InterviewerComponent } from './interviewer/interviewer.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +28,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     DashboardComponent,
     JobcreateComponent,
-    ApplyjobComponent
+    ApplyjobComponent,
+    CanditateComponent,
+    StatusComponent,
+    UsersComponent,
+    RecruiterComponent,
+    ManagementComponent,
+    InterviewerComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +42,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

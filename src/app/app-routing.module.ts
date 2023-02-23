@@ -5,6 +5,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobcreateComponent } from './jobcreate/jobcreate.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {CanditateComponent  } from './canditate/canditate.component';
+import { StatusComponent } from './status/status.component';
+import { InterviewerComponent } from './interviewer/interviewer.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'prefix' },
@@ -13,6 +17,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'jobcreate', component: JobcreateComponent },
   { path: 'applyjob', component: ApplyjobComponent },
+  { path : 'canditate',component: CanditateComponent},
+  { path : 'status',component: StatusComponent},
+  { path : 'interviewer',component:InterviewerComponent}
 ];
 
 @NgModule({

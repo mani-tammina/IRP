@@ -1,0 +1,33 @@
+<div>
+    <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">jobid</th>
+                    <th scope="col">jobstitle</th>
+                    <th scope="col">jobDescription</th>
+                    <th scope="col">experience</th>
+                    <th scope="col">CTCExpected</th>
+                    <th scope="col">Relocate</th>
+                    <th scope="col">NoticePeriod</th>
+                    <th scope="col">JobType</th>
+                    <th scope="col">description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of getapplication ; let i=index"> 
+                    <td>{{job._id}}</td>
+                        <td>{{job.jobstitle}}</td>
+                        <td>{{job.jobDescription}}</td>
+                        <td>{{job.experience}}</td>
+                        <td>{{job.CTCExpected}}</td>
+                        <td>{{job.Relocate}}</td>
+                        <td>{{job.NoticePeriod}}</td>
+                        <td>{{job.JobType}}</td>
+                        <td>{{job.description}}</td>
+              </tr> 
+            </tbody>
+        </table>
+    </div>
+</div>

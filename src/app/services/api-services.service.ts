@@ -16,9 +16,9 @@ export class ApiServicesService {
     return this.http.get('http://localhost:3000/api/getusers');
   }
 
-  getJobs(data:any) {
+  getJobs() {
     console.log('caling2');
-    return this.http.get<any>('http://localhost:3000/api/getjobs',data)
+    return this.http.get<any>('http://localhost:3000/api/getjobs')
   }
 
   getApplications() {
@@ -29,4 +29,9 @@ export class ApiServicesService {
   saveJob(payload:any) {
     console.log('came222')
     return this.http.post('http://localhost:3000/api/saveJob',payload,{responseType: 'text'})}
+   
+    saveApplication(data:any) {
+    console.log('raara')
+    return this.http.post('http://localhost:3000/api/saveApplication',data,{responseType: 'text'})
+  }
 }

@@ -42,132 +42,47 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="dashboards()">
                             <i class="bi bi-house"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="recruiter()">
                             <i class="bi bi-bar-chart"></i> Recruiter
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="management()" >
                             <i class="bi bi-chat"></i> Management
                             <!-- <span
                                 class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span> -->
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="interviewer()" >
                             <i class="bi bi-bookmarks"></i> Interviewer
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" (click)="user()">
                             <i class="bi bi-people"></i> Users
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/applyjob">
+                        <a class="nav-link" routerLink="/canditate">
                             <i class="bi bi-clock-history"></i> Jobs
                         </a>
                     </li>
                 </ul>
                 <hr class="navbar-divider my-5 opacity-20">
-                <!-- <ul class="navbar-nav mb-md-4">
-                    <li>
-                        <div class="nav-link text-xs font-semibold text-uppercase text-muted ls-wide" href="#">
-                            Contacts
-                            <span
-                                class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-4">13</span>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <div class="me-4">
-                                <div class="position-relative d-inline-block text-white">
-                                    <img alt="Image Placeholder"
-                                        src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                        class="avatar rounded-circle">
-                                    <span
-                                        class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="d-block text-sm font-semibold">
-                                    Marie Claire
-                                </span>
-                                <span class="d-block text-xs text-muted font-regular">
-                                    Paris, FR
-                                </span>
-                            </div>
-                            <div class="ms-auto">
-                                <i class="bi bi-chat"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <div class="me-4">
-                                <div class="position-relative d-inline-block text-white">
-                                    <span class="avatar bg-soft-warning text-warning rounded-circle">JW</span>
-                                    <span
-                                        class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="d-block text-sm font-semibold">
-                                    Michael Jordan
-                                </span>
-                                <span class="d-block text-xs text-muted font-regular">
-                                    Bucharest, RO
-                                </span>
-                            </div>
-                            <div class="ms-auto">
-                                <i class="bi bi-chat"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <div class="me-4">
-                                <div class="position-relative d-inline-block text-white">
-                                    <img alt="..."
-                                        src="https://images.unsplash.com/photo-1610899922902-c471ae684eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                        class="avatar rounded-circle">
-                                    <span
-                                        class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-danger rounded-circle"></span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="d-block text-sm font-semibold">
-                                    Heather Wright
-                                </span>
-                                <span class="d-block text-xs text-muted font-regular">
-                                    London, UK
-                                </span>
-                            </div>
-                            <div class="ms-auto">
-                                <i class="bi bi-chat"></i>
-                            </div>
-                        </a>
-                    </li>
-                </ul> -->
-                <div class="mt-auto"></div>
+                            <div class="mt-auto"></div>
                 <ul class="navbar-nav">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-person-square"></i> Account
-                        </a>
-                    </li> -->
-                 
                 </ul>
             </div>
         </div>
     </nav>
     <div class="h-screen flex-grow-1 overflow-y-lg-auto">
-        <header class="bg-surface-primary border-bottom pt-6">
+        <header class="bg-surface-primary border-bottom pt-6" [ngClass]="dashboard ? 'd-block' : 'd-none'">
             <div class="container-fluid">
                 <div class="mb-npx">
                     <div class="row align-items-center">
@@ -195,30 +110,24 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">All files</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link font-regular">Shared</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link font-regular">File requests</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </header>
         <main class="py-6 bg-surface-secondary">
-            <div class="container-fluid">
+            <div *ngIf="dashboard" class="container-fluid">
                 <div class="row g-6 mb-6">
                     <div class="col-xl-3 col-sm-6 col-12">
                         <div class="card shadow border-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Budget</span>
-                                        <span class="h3 font-bold mb-0">$750.90</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2"><b>Total Positions</b></span>
+                                        <span class="h3 font-bold mb-0">300</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
-                                            <i class="bi bi-credit-card"></i>
+                                            <i class="bi bi-bar-chart-line-fill"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -236,9 +145,8 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">New
-                                            projects</span>
-                                        <span class="h3 font-bold mb-0">215</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Vacancies</span>
+                                        <span class="h3 font-bold mb-0">250</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
@@ -260,13 +168,15 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total
-                                            hours</span>
-                                        <span class="h3 font-bold mb-0">1.400</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Positions Filled
+                                        </span>
+                                        <span class="h3 font-bold mb-0">33</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-                                            <i class="bi bi-clock-history"></i>
+                                            <!-- <i class="bi bi-graph-up"></i>
+                                             -->
+                                             <i class="bi bi-person-check-fill"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -284,12 +194,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work load</span>
-                                        <span class="h3 font-bold mb-0">95%</span>
+                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Employees</span>
+                                        <span class="h3 font-bold mb-0">300</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-                                            <i class="bi bi-minecart-loaded"></i>
+                                            <i class="bi bi-graph-up"></i>
+                                            <!-- <i class="bi bi-minecart-loaded"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -313,34 +224,34 @@
                                 <tr>
                                     <th scope="col">Name</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Company</th>
-                                    <th scope="col">Offer</th>
-                                    <th scope="col">Meeting</th>
+                                    <th scope="col">JobPost</th>
+                                    <th scope="col">Salary Offered</th>
+                                    <th scope="col">Interview Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Robert Fox
+                                            Hemanth 
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2021
+                                        Feb 15, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
                                             class="avatar avatar-xs rounded-circle me-2">
                                         <a class="text-heading font-semibold" href="#">
-                                            Dribbble
+                                            LinkedIn
                                         </a>
                                     </td>
                                     <td>
-                                        $3.500
+                                        75000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -357,15 +268,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Darlene Robertson
+                                            Manikanta
                                         </a>
                                     </td>
                                     <td>
-                                        Apr 15, 2021
+                                        Jan 15, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png"
@@ -375,7 +286,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $2.750
+                                        50000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -392,15 +303,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Theresa Webb
+                                          Ramya
                                         </a>
                                     </td>
                                     <td>
-                                        Mar 20, 2021
+                                        Mar 20, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png"
@@ -410,7 +321,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $4.200
+                                        45000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -427,15 +338,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Kristin Watson
+                                           Moulika
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2021
+                                        Feb 14, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-4.png"
@@ -445,7 +356,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $3.500
+                                        50000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -462,15 +373,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
-                                            src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                        <!-- <img alt="..."
+                                            src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" -->
+                                            <!-- class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Cody Fisher
+                                            Tharakanadh
                                         </a>
                                     </td>
                                     <td>
-                                        Apr 10, 2021
+                                        Apr 10, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png"
@@ -480,7 +391,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $1.500
+                                        60000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -497,15 +408,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Robert Fox
+                                            Ganesh
                                         </a>
                                     </td>
                                     <td>
-                                        Feb 15, 2021
+                                        Feb 15, 2023
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png"
@@ -515,7 +426,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $3.500
+                                        70000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -532,15 +443,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Darlene Robertson
+                                            Geethika
                                         </a>
                                     </td>
                                     <td>
-                                        Apr 15, 2021
+                                        Apr 15, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-2.png"
@@ -550,7 +461,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $2.750
+                                        20000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -567,15 +478,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Theresa Webb
+                                            MohanRao
                                         </a>
                                     </td>
                                     <td>
-                                        Mar 20, 2021
+                                        Mar 20, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-3.png"
@@ -585,7 +496,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $4.200
+                                        200000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -602,11 +513,11 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Kristin Watson
+                                            Yamini
                                         </a>
                                     </td>
                                     <td>
@@ -620,7 +531,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $3.500
+                                        50000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -637,15 +548,15 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img alt="..."
+                                        <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
-                                            class="avatar avatar-sm rounded-circle me-2">
+                                            class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Cody Fisher
+                                            Unknown
                                         </a>
                                     </td>
                                     <td>
-                                        Apr 10, 2021
+                                        Apr 10, 2022
                                     </td>
                                     <td>
                                         <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-5.png"
@@ -655,7 +566,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        $1.500
+                                       40000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -678,6 +589,25 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <div >
+                <h1 *ngIf="recruiters">Recruiter Works</h1>
+            </div>
+
+            
+            <div >
+                <h1 *ngIf="managements">Management Works</h1>
+            </div>
+            <div *ngIf="interviewers" >
+                <app-interviewer></app-interviewer>
+            </div>
+            
+            <div *ngIf="users">
+            <app-users></app-users>
+            </div>
+
         </main>
     </div>
 </div>
