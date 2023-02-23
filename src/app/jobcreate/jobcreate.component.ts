@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { ApiServicesService } from '../services/api-services.service';
 
 @Component({
@@ -6,28 +8,59 @@ import { ApiServicesService } from '../services/api-services.service';
   templateUrl: './jobcreate.component.html',
   styleUrls: ['./jobcreate.component.scss']
 })
-export class JobcreateComponent {
+export class JobcreateComponent implements OnInit {
 
-  constructor(private apiService: ApiServicesService) {
-    this.jobPost();
-  }
+  jobcreate !: FormGroup;
+  userlist: userDetails = new userDetails
+  constructor(private auth: ApiServicesService, private formbuilder: FormBuilder,) { }
 
-  jobPost() {
-    const data = {
-      jobtitle: 'Angular',
-      jobdesc: 'Angular Developer',
-      jobtype: 'Full Time',
-      skills: 'Node JS, Angular',
-      experience: '5+',
-      ctc: '12 LPA',
-      location: 'Vizag',
-      joinperiod: '30',
-      status: 'pending'
-    }
-
-    this.apiService.addJob(data).subscribe(res => {
-      console.log('res', res);
+  ngOnInit() {
+    this.jobcreate = this.formbuilder.group({
+      jobtitle: ['', Validators.required],
+      experience: ['', Validators.required],
+      jobdesc: ['', Validators.required],
+      joinperiod: ['', Validators.required],
+      ctc: ['', Validators.required],
+      skills: [''],
+      requirement: [''],
+      location: [''],
+      status: ['', Validators.required],
     })
   }
+  submit() {
+    this.userlist.jobtitle = this.jobcreate.value.jobtitle
+    this.userlist.experience = this.jobcreate.value.experience
+    this.userlist.location = this.jobcreate.value.location
+    this.userlist.requirement = this.jobcreate.value.requirement
+    this.userlist.skills = this.jobcreate.value.skills
+    this.userlist.jobdesc = this.jobcreate.value.jobdesc
+    this.userlist.joinperiod = this.jobcreate.value.joinperiod
+    this.userlist.ctc = this.jobcreate.value.ctc
+    this.userlist.status = this.jobcreate.value.status
+    console.log(this.userlist)
 
+    if (this.jobcreate.valid) {
+      this.auth.saveJob(this.userlist).subscribe(res => {
+        console.log(res);
+      });
+      this.jobcreate.reset();
+      if (this.userlist) {
+        Swal.fire("successfully job created");
+      }
+    } else {
+      Swal.fire("Please fill all the fields");
+    }
+  }
+}
+
+export class userDetails {
+  jobtitle: any;
+  jobdesc: any;
+  experience: any;
+  joinperiod: any;
+  location: any;
+  skills: any;
+  ctc: any;
+  status: any;
+  requirement: any;
 }

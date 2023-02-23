@@ -19,6 +19,13 @@ export class ApiServicesService {
     return this.http.get('http://localhost:3000/api/getjobs');
   }
 
+  saveJob(payload: any) {
+    return this.http.post('http://localhost:3000/api/saveJob', payload, { responseType: 'text' })
+  }
+  saveApplication(data: any) {
+    return this.http.post('http://localhost:3000/api/saveApplication', data, { responseType: 'text' })
+  }
+
   getApplications() {
     return this.http.get('http://localhost:3000/api/getapplications');
   }
@@ -37,5 +44,9 @@ export class ApiServicesService {
 
   addApplication(data: any) {
     return this.http.post('http://localhost:3000/api/saveApplication', data)
+  }
+
+  reset(email: any) {
+    return this.http.get('http://localhost:3000/api/resetpassword/' + email)
   }
 }
