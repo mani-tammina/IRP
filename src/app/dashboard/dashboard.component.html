@@ -75,7 +75,7 @@
                     </li>
                 </ul>
                 <hr class="navbar-divider my-5 opacity-20">
-                            <div class="mt-auto"></div>
+                <div class="mt-auto"></div>
                 <ul class="navbar-nav">
                 </ul>
             </div>
@@ -176,7 +176,7 @@
                                         <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
                                             <!-- <i class="bi bi-graph-up"></i>
                                              -->
-                                             <i class="bi bi-person-check-fill"></i>
+                                            <i class="bi bi-person-check-fill"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@
                                             src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                                             class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                            Hemanth 
+                                            Hemanth
                                         </a>
                                     </td>
                                     <td>
@@ -307,7 +307,7 @@
                                             src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                                             class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                          Ramya
+                                            Ramya
                                         </a>
                                     </td>
                                     <td>
@@ -342,7 +342,7 @@
                                             src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
                                             class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
-                                           Moulika
+                                            Moulika
                                         </a>
                                     </td>
                                     <td>
@@ -375,7 +375,7 @@
                                     <td>
                                         <!-- <img alt="..."
                                             src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" -->
-                                            <!-- class="avatar avatar-sm rounded-circle me-2"> -->
+                                        <!-- class="avatar avatar-sm rounded-circle me-2"> -->
                                         <a class="text-heading font-semibold" href="#">
                                             Tharakanadh
                                         </a>
@@ -566,7 +566,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                       40000
+                                        40000
                                     </td>
                                     <td>
                                         <span class="badge badge-lg badge-dot">
@@ -592,22 +592,20 @@
 
 
 
-            <div >
-                <h1 *ngIf="recruiters">Recruiter Works</h1>
+            <div *ngIf="recruiters">
                 <app-recruiter></app-recruiter>
             </div>
 
-            
-            <div>
-                <h1 *ngIf="managements">Management Works</h1>
+            <div *ngIf="managements">
                 <app-management></app-management>
             </div>
-            <div *ngIf="interviewers" >
+            
+            <div *ngIf="interviewers">
                 <app-interviewer></app-interviewer>
             </div>
-            
+
             <div *ngIf="users">
-            <app-users></app-users>
+                <app-users></app-users>
             </div>
 
         </main>
