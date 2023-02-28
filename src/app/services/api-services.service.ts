@@ -34,4 +34,8 @@ export class ApiServicesService {
     console.log('raara')
     return this.http.post('http://localhost:3000/api/saveApplication',data,{responseType: 'text'})
   }
+
+  sendMails(list:any) {
+    return this.http.post('http://localhost:3000/email/sendMails', list)
+  }
 }

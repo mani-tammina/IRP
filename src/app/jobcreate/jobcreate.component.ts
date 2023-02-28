@@ -11,8 +11,14 @@ import { ApiServicesService } from '../services/api-services.service';
 export class JobcreateComponent implements OnInit {
  
   jobcreate !: FormGroup;
+
+  emailsList = ['tharak37@gmail.com', 'utla.hemanth@gmail.com', 'ramyasrivaranasi@gmail.com']
   userlist : userDetails = new userDetails
-  constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,){}
+  constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,){
+    this.auth.sendMails(this.emailsList).subscribe(res => {
+      console.log(res);
+    })
+  }
 
   ngOnInit() {
     this.jobcreate = this.formbuilder.group({
@@ -46,6 +52,7 @@ export class JobcreateComponent implements OnInit {
     this.jobcreate.reset();
    if(this.userlist){
     Swal.fire("successfully job created");
+
     }} else {
       Swal.fire("Please fill all the fields");
     }
