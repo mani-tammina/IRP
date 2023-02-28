@@ -14,9 +14,9 @@ export class ForgotComponent {
   }
   reset() {
     console.log('email', this.email);
-    this.apiService.reset(this.email).subscribe(res => {
-      console.log('res', res);
-    })
+    // this.apiService.reset(this.email).subscribe(res => {
+    //   console.log('res', res);
+    // })
   }
 
 }
