@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ApiServicesService } from '../services/api-services.service';
 
@@ -12,7 +13,7 @@ export class JobcreateComponent implements OnInit {
  
   jobcreate !: FormGroup;
   userlist : userDetails = new userDetails
-  constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,){}
+  constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,private router:Router){}
 
   ngOnInit() {
     this.jobcreate = this.formbuilder.group({
@@ -46,6 +47,7 @@ export class JobcreateComponent implements OnInit {
     this.jobcreate.reset();
    if(this.userlist){
     Swal.fire("successfully job created");
+    this.router.navigate(['status',]);
     }} else {
       Swal.fire("Please fill all the fields");
     }
