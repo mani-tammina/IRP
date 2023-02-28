@@ -14,6 +14,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ForgotComponent } from './forgot/forgot.component';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CanditateComponent } from './canditate/canditate.component';
+import { StatusComponent } from './status/status.component';
+import { MatDialogModule } from '@angular/material/dialog';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UsersComponent } from './users/users.component';
+import { RecruiterComponent } from './recruiter/recruiter.component';
+import { ManagementComponent } from './management/management.component';
+import { InterviewerComponent } from './interviewer/interviewer.component';
+
 
 @NgModule({
   declarations: [
@@ -24,8 +34,12 @@ import { ForgotComponent } from './forgot/forgot.component';
     JobcreateComponent,
     ApplyjobComponent,
     ForgotComponent,
-
-
+    CanditateComponent,
+    StatusComponent,
+    UsersComponent,
+    RecruiterComponent,
+    ManagementComponent,
+    InterviewerComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +54,11 @@ import { ForgotComponent } from './forgot/forgot.component';
       positionClass: 'toast-bottom-center',
       preventDuplicates: true,
     }),
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

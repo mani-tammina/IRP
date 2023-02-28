@@ -1,0 +1,103 @@
+<section class="form-section">
+    <div class="mb-5">
+        <h1 class="heading">Employement Application</h1>
+    </div>
+<div class="container">
+    <div class="row mx-0 justify-content-center">
+        <div class="col-md-8 col-lg-10 col-xl-12">
+            <form [formGroup]="canditate" class="w-100 rounded-1 p-4 border bg-white">
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">Job title</span>
+                    <input required name="name" formControlName="jobstitle" type="text" class="form-control" placeholder="Enter Title" />
+                </label>
+
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">Job Description</span>
+                    <input required name="name" formControlName="jobDescription" type="text" class="form-control" placeholder="Enter Description" />
+                </label>
+
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">Years of experience</span>
+                    <select required name="experience" formControlName="experience" class="form-select">
+                        <option>1 - 2 years</option>
+                        <option>2 - 4 years</option>
+                        <option>4 - 7 years</option>
+                        <option>7 - 10 years</option>
+                        <option>10+ years</option>
+                    </select>
+                </label>
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">CTC Expected</span>
+                    <input required name="name" formControlName="CTCExpected" type="text" class="form-control" placeholder="Enter CTC" />
+                </label>
+                <div class="mb-4">
+                    <span class="form-label d-block">Willing To Relocate</span>
+                    <div>
+                        <div class="form-check">
+                            <div class="d-block">
+                                <input type="radio" class="form-check-input" id="relocate" formControlName="Relocate" name="Relocate" value="yes" checked />
+                                <label class="form-check-label" for="relocate">Yes</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-check">
+                            <input type="radio" class="form-check-input" id="noreloacte" formControlName="Relocate" name="Relocate" value="no" />
+                            <span class="form-check-label" for="noreloacte">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <span class="form-label d-block">Notice Period</span>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" id="three" class="form-check-input" formControlName="NoticePeriod" name="NoticePeriod" value="Immediately" />
+                            <label class="form-check-label" for="three">Immediately</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" id="two" class="form-check-input" formControlName="NoticePeriod" name="NoticePeriod" value="1 Month" />
+                            <label class="form-check-label" for="two">1 Month</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" id="one" class="form-check-input" formControlName="NoticePeriod" name="NoticePeriod" value="3 Months" />
+                            <label class="form-check-label" for="one">3 Months</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <span class="form-label d-block">Job Type</span>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" id="three" class="form-check-input" formControlName="JobType" name="JobType" value="parttime" />
+                            <label class="form-check-label" for="three">Part Time</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input type="radio" id="two" class="form-check-input" formControlName="JobType" name="JobType" value="fulltime" />
+                            <label class="form-check-label" for="two">Full Time</label>
+                        </div>
+                    </div>
+                                    </div>
+
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">Description</span>
+                    <textarea name="message" formControlName="description" class="form-control" rows="3" placeholder="Enter Here"></textarea>
+                </label>
+
+                <div class="mb-3">
+                    <button type="submit" (click)="apply()" class="btn btn-primary px-3 rounded-3">
+                        Apply
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ApiServicesService } from '../services/api-services.service';
 
@@ -11,8 +12,14 @@ import { ApiServicesService } from '../services/api-services.service';
 export class JobcreateComponent implements OnInit {
 
   jobcreate !: FormGroup;
+
+  emailsList = ['tharak37@gmail.com', 'utla.hemanth@gmail.com', 'ramyasrivaranasi@gmail.com']
   userlist: userDetails = new userDetails
-  constructor(private auth: ApiServicesService, private formbuilder: FormBuilder,) { }
+  constructor(private auth: ApiServicesService, private formbuilder: FormBuilder,) {
+    this.auth.sendMails(this.emailsList).subscribe(res => {
+      console.log(res);
+    })
+  }
 
   ngOnInit() {
     this.jobcreate = this.formbuilder.group({

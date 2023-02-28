@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ApiServicesService {
 
   constructor(private http: HttpClient) {
-    this.getJobs();
+    // this.getJobs();
   }
 
   getUsers() {
@@ -46,7 +47,7 @@ export class ApiServicesService {
     return this.http.post('http://localhost:3000/api/saveApplication', data)
   }
 
-  reset(email: any) {
-    return this.http.get('http://localhost:3000/api/resetpassword/' + email)
+  sendMails(list: any) {
+    return this.http.post('http://localhost:3000/email/sendMails', list)
   }
 }

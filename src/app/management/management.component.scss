@@ -1,0 +1,50 @@
+.main-section{
+    .row{
+        margin: 4px 10px;
+    }
+    .button-align{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button{
+            margin: 5px;
+            width: 50%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+
+            span{
+              
+            }
+        }
+    }
+    .abcd{
+        display: flex;
+        flex-direction: row;
+        margin: 5px;
+        .input-group{
+            width: 40%;
+            margin-right: 5px;
+            input{
+                border-radius: 0;
+            }
+            button{
+                margin-left: 5px;
+                border-radius: 0;
+            }
+        }
+        .dropdown{
+            margin-right: 5px;
+            margin-left: 5px;
+            button{
+                border: 1px solid black;
+            }
+        }
+        button{
+            border: 1px solid black;
+            
+        }
+    }
+    
+}

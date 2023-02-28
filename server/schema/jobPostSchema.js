@@ -4,6 +4,7 @@ var jobPostsSchema = new mongoose.Schema({
     jobtitle: String,
     jobdesc: String,
     jobtype: String,
+    requirement: String,
     skills: String,
     experience: String,
     ctc: String,
