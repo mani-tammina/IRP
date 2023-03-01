@@ -10,7 +10,6 @@ import { ApiServicesService } from '../services/api-services.service';
   styleUrls: ['./jobcreate.component.scss']
 })
 export class JobcreateComponent implements OnInit {
- 
   jobcreate !: FormGroup;
   userlist : userDetails = new userDetails
   constructor(private auth : ApiServicesService,private formbuilder : FormBuilder,private router:Router){}
@@ -41,13 +40,28 @@ export class JobcreateComponent implements OnInit {
     console.log(this.userlist)
    
     if(this.jobcreate.valid) {
-      this.auth.saveJob(this.userlist).subscribe(res => {
-        console.log(res);
-      });
-    this.jobcreate.reset();
    if(this.userlist){
-    Swal.fire("successfully job created");
-    this.router.navigate(['status',]);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to submit the form',
+      // icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, submit it!',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.auth.saveJob(this.userlist).subscribe(res => {
+          console.log(res);
+        });
+      this.jobcreate.reset();
+   
+        this.router.navigate(['status']);
+      } 
+      //  else if (result.isDismissed === Swal.DismissReason.cancel) {
+      //   // If the user clicks on the Cancel button, do nothing
+
+      // }
+    }) 
     }} else {
       Swal.fire("Please fill all the fields");
     }

@@ -50,8 +50,23 @@ if(this.canditate.valid){
 }
 this.canditate.reset();
 if(this.isinserted){
-  Swal.fire("successfully applied job");
-  this.router.navigateByUrl('status');
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You are about to submit the form',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, submit it!',
+    cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.router.navigate(['status']);
+    } 
+    //  else if (result.isDismissed === Swal.DismissReason.cancel) {
+    //   // If the user clicks on the Cancel button, do nothing
+
+    // }
+  }) 
+  
 }
 else {
   Swal.fire("Please fill all the fields");
