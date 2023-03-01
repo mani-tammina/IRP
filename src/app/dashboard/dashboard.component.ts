@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiServicesService } from '../services/api-services.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,10 @@ export class DashboardComponent {
   managements:any;
   interviewers:any;
   users:any;
+  getapplication: any;
+  constructor(private auth : ApiServicesService){
 
+  }
   recruiter(){
     this.recruiters=true;
     this.managements=false;
@@ -52,6 +56,17 @@ export class DashboardComponent {
     this.interviewers=false;
     this.users=true;
     this.dashboard=false;
+  }
+
+  ngOnInit(){
+    this.auth.getApplications().subscribe((data)=>{
+      console.log('getapplication',data);
+      this.getapplication = data;
+    })
+this.dashboards();
+
+
+    
   }
 
 }
