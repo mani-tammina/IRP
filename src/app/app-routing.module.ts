@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import {CanditateComponent  } from './canditate/canditate.component';
 import { StatusComponent } from './status/status.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot', component: ForgotComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard]},
   { path: 'jobcreate', component: JobcreateComponent },
   { path: 'applyjob', component: ApplyjobComponent },
   { path : 'canditate',component: CanditateComponent},

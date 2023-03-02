@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ForgotComponent } from './forgot/forgot.component';
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +23,8 @@ import { UsersComponent } from './users/users.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { ManagementComponent } from './management/management.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
+import { AuthGuard } from './auth.guard';
+import { InterceptorsInterceptor } from './interceptors.interceptor';
 
 
 @NgModule({
@@ -61,7 +63,14 @@ import { InterviewerComponent } from './interviewer/interviewer.component';
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [
+    {
+    provide:HTTP_INTERCEPTORS,
+      useClass:InterceptorsInterceptor,
+      multi:true
+    },
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
