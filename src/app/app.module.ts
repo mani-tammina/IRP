@@ -23,6 +23,7 @@ import { UsersComponent } from './users/users.component';
 import { RecruiterComponent } from './recruiter/recruiter.component';
 import { ManagementComponent } from './management/management.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { InterviewerComponent } from './interviewer/interviewer.component';
     UsersComponent,
     RecruiterComponent,
     ManagementComponent,
-    InterviewerComponent
+    InterviewerComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

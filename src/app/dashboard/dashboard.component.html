@@ -1,7 +1,7 @@
 <a class="btn w-full btn-primary text-truncate rounded-0 py-2 border-0 position-relative" style="z-index: 1000;">
     <strong>IRP: </strong> Intelligent Recruitment Process
     <li class="nav-item log-out">
-        <a class="nav-link logout_text">
+        <a (click)="logout()" class="nav-link logout_text">
             <i class="bi bi-box-arrow-left"></i> Logout
         </a>
     </li>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="card shadow border-0 mb-7">
                     <div class="card-header">
-                        <h5 class="mb-0">Applications</h5>
+                        <h5 class="mb-0">Jobs List</h5>
                     </div>
                     <div>
                         <div class="table-responsive">
@@ -238,17 +238,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let job of getapplication ; let i=index"> 
+                                    <tr *ngFor="let job of getapplication ; let i=index">
                                         <td>{{job._id}}</td>
-                                            <td>{{job.jobstitle}}</td>
-                                            <td>{{job.jobDescription}}</td>
-                                            <td>{{job.experience}}</td>
-                                            <td>{{job.CTCExpected}}</td>
-                                            <td>{{job.Relocate}}</td>
-                                            <td>{{job.NoticePeriod}}</td>
-                                            <td>{{job.JobType}}</td>
-                                            <td>{{job.description}}</td>
-                                  </tr> 
+                                        <td>{{job.jobstitle}}</td>
+                                        <td>{{job.jobDescription}}</td>
+                                        <td>{{job.experience}}</td>
+                                        <td>{{job.CTCExpected}}</td>
+                                        <td>{{job.Relocate}}</td>
+                                        <td>{{job.NoticePeriod}}</td>
+                                        <td>{{job.JobType}}</td>
+                                        <td>{{job.description}}</td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-sm btn-neutral">View</a>
+                                            <button type="button"
+                                                class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

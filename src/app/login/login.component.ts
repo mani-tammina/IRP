@@ -18,11 +18,17 @@ export class LoginComponent {
 
   login() {
     this.api.getUserByID(this.username).subscribe((res: any) => {
-      if (res[0].password === this.password) {
+      if (!res[0]) {
+        this.toastr.warning('Users not found!');
+      } else if (res[0].password == this.password) {
         this.toastr.success('Login Successfully!');
-        this.router.navigate(['dashboard']);
+        if (res[0].type == 'Interviewer') {
+          this.router.navigate(['schedule'])
+        } else {
+          this.router.navigate(['dashboard'])
+        }
       } else {
-        this.toastr.error('Login Failed!');
+        this.toastr.error('Login failed!');
       }
     });
   }

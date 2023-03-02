@@ -6,6 +6,9 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiServicesService {
+  saveUser(data: { username: any; role: any; email: any; password: any; }) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) {
     // this.getJobs();
@@ -36,7 +39,7 @@ export class ApiServicesService {
   }
 
   addUser(data: any) {
-    return this.http.post('http://localhost:3000/api/saveUser', data)
+    return this.http.post('http://localhost:3000/api/saveUser', data, { responseType: 'text' })
   }
 
   addJob(data: any) {

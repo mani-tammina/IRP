@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiServicesService } from '../services/api-services.service';
 
 @Component({
@@ -9,64 +10,69 @@ import { ApiServicesService } from '../services/api-services.service';
 export class DashboardComponent {
 
 
-  recruiters:any;
-  dashboard:any;
-  managements:any;
-  interviewers:any;
-  users:any;
+  recruiters: any;
+  dashboard: any;
+  managements: any;
+  interviewers: any;
+  users: any;
   getapplication: any;
-  constructor(private auth : ApiServicesService){
+  constructor(private auth: ApiServicesService, private router: Router) {
 
   }
-  recruiter(){
-    this.recruiters=true;
-    this.managements=false;
-    this.interviewers=false;
-    this.users=false;
-    this.dashboard=false;
+  recruiter() {
+    this.recruiters = true;
+    this.managements = false;
+    this.interviewers = false;
+    this.users = false;
+    this.dashboard = false;
   }
 
-  dashboards(){
-    this.recruiters=false;
-    this.managements=false;
-    this.interviewers=false;
-    this.users=false;
-    this.dashboard=true;
+  dashboards() {
+    this.recruiters = false;
+    this.managements = false;
+    this.interviewers = false;
+    this.users = false;
+    this.dashboard = true;
   }
 
 
-  management(){
-    this.recruiters=false;
-    this.managements=true;
-    this.interviewers=false;
-    this.users=false;
-    this.dashboard=false;
+  management() {
+    this.recruiters = false;
+    this.managements = true;
+    this.interviewers = false;
+    this.users = false;
+    this.dashboard = false;
   }
-  interviewer(){
-    this.recruiters=false;
-    this.managements=false;
-    this.interviewers=true;
-    this.users=false;
-    this.dashboard=false;
-  }
-
-  user(){
-    this.recruiters=false;
-    this.managements=false;
-    this.interviewers=false;
-    this.users=true;
-    this.dashboard=false;
+  interviewer() {
+    this.recruiters = false;
+    this.managements = false;
+    this.interviewers = true;
+    this.users = false;
+    this.dashboard = false;
   }
 
-  ngOnInit(){
-    this.auth.getApplications().subscribe((data)=>{
-      console.log('getapplication',data);
+  user() {
+    this.recruiters = false;
+    this.managements = false;
+    this.interviewers = false;
+    this.users = true;
+    this.dashboard = false;
+  }
+
+  ngOnInit() {
+    this.auth.getApplications().subscribe((data) => {
+      console.log('getapplication', data);
       this.getapplication = data;
     })
-this.dashboards();
+    this.dashboards();
 
 
-    
+
+  }
+
+  logout() {
+    console.log('logout');
+    this.router.navigate(['login'])
   }
 
 }
