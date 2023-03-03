@@ -8,8 +8,12 @@ import { ApiServicesService } from '../services/api-services.service';
 })
 export class InterviewerComponent {
   getjobs: any;
+  applications:any
 constructor(private auth : ApiServicesService){
-
+  this.auth.getApplications().subscribe((res:any) => {
+    console.log(res);
+    this.applications = res;
+  });
 }
   ngOnInit(){
     this.auth.getJobs().subscribe((data)=>{

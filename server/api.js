@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
+var ObjectId = require('mongodb').ObjectID;
 
 const usersSchema = require('./schema/usersSchema');
 const jobPostSchema = require('./schema/jobPostSchema');
@@ -110,6 +111,28 @@ router.get('/getJobs', function (req, res) {
     });
 });
 
+router.get('/getJobByID/:id', function (req, res) {
+    jobPostSchema.find({_id: req.params.id}, function (err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(data);
+        }
+    });
+});
+
+router.get('/getJobsByUserID/:id', function (req, res) {
+    jobPostSchema.find({userId: req.params.id}, function (err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(data);
+        }
+    });
+});
+
 router.post('/updateJob', function (req, res) {
     jobPostSchema.findByIdAndUpdate(req.body.id,
         { Name: req.body.Name }, function (err, data) {
@@ -135,6 +158,9 @@ router.post('/deleteJob', function (req, res) {
             }
         });
 });
+
+
+
 //Job APIs ended here
 
 //Application APIs started here 
@@ -153,6 +179,17 @@ router.post('/saveApplication', function (req, res) {
 
 router.get('/getapplications', function (req, res) {
     applicationSchema.find(function (err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(data);
+        }
+    });
+});
+
+router.get('/getAppByJobID/:id', function (req, res) {
+    applicationSchema.find({jobid: req.params.id}, function (err, data) {
         if (err) {
             console.log(err);
         }

@@ -1,41 +1,55 @@
-
-<div class="button d-flex justify-content-evenly w-100">
-        <button type="button" class="btn btn-primary ivrCalling">
-            <i class="bi bi-telephone-fill"></i> IVR Calling</button>
-
-            <button type="button" class="btn btn-secondary ivrCalling">
-                <i class="bi bi-journals"></i>
-                Online Form</button>
-   
-      
-            <button type="button" class="btn btn-success ivrCalling">
-                <i class="bi bi-wechat"></i>
-                ChatBot </button>
-</div>
-<br>
 <div class="input-group rounded">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+        aria-describedby="search-addon" />
     <span class="input-group-text border-0" id="search-addon">
-     <i class="bi bi-search"></i>
+        <i class="bi bi-search"></i>
     </span>
-  </div>
+</div>
 
-    <div class="table-responsive">
-        <table class="table table-hover table-nowrap">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">jobid</th>
-                    <th scope="col">jobtitle</th>
-                    <th scope="col">jobdesc</th>
-                    <th scope="col">skills</th>
-                    <th scope="col">experience</th>
-                    <th scope="col">ctc</th>
-                    <th scope="col">location</th>
-                    <th scope="col">joinperiod</th>
-                    <th scope="col">status</th>
-                    <th></th>
-                </tr>
-            </thead>
-        </table>
+<div class="card shadow border-0 mb-7">
+    <div class="card-header">
+        <h5 class="mb-0">Jobs List</h5>
     </div>
-   
+    <div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">job Title</th>
+                        <th scope="col">Skills</th>
+                        <th scope="col">Job Type</th>
+                        <th scope="col">Exp Required</th>
+                        <th scope="col">CTC offered</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Join Period</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let job of jobsList ; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{job.jobtitle}}</td>
+                        <td>{{job.skills}}</td>
+                        <td>{{job.jobtype | titlecase}}</td>
+                        <td>{{job.experience}}</td>
+                        <td>{{job.ctc}}</td>
+                        <td>{{job.location}}</td>
+                        <td>{{job.joinperiod}}</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-neutral" (click)="viewJob(job._id)">View Job</a>
+                            <!-- <a class="btn btn-sm btn-neutral" (click)="applyJob(job._id)">Apply Job</a>
+                            <button type="button"
+                                class="btn btn-sm btn-square btn-neutral text-danger-hover">
+                                <i class="bi bi-trash"></i>
+                            </button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="card-footer border-0 py-5">
+        <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+    </div> -->
+</div>

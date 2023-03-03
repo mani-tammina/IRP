@@ -16,6 +16,7 @@ export class DashboardComponent {
   interviewers: any;
   users: any;
   getapplication: any;
+  jobList: any;
   constructor(private auth: ApiServicesService, private router: Router) {
 
   }
@@ -63,6 +64,10 @@ export class DashboardComponent {
     this.auth.getApplications().subscribe((data) => {
       console.log('getapplication', data);
       this.getapplication = data;
+    });
+    this.auth.getJobs().subscribe((data) => {
+      console.log('getjobs', data);
+      this.jobList = data;
     })
     this.dashboards();
 
@@ -73,6 +78,15 @@ export class DashboardComponent {
   logout() {
     console.log('logout');
     this.router.navigate(['login'])
+  }
+
+
+  viewJob(id:any) {
+    this.router.navigate(['/jobdetails', id]);
+  }
+
+  applyJob(id:any) {
+    this.router.navigate(['/applyjob', id]);
   }
 
 }

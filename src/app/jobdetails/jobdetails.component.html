@@ -1,0 +1,51 @@
+<div>
+
+    <div class="card" *ngIf="jobDetails">
+        <h2 *ngIf="jobDetails.jobtitle">{{ jobDetails.jobtitle }}</h2>
+        <h3 *ngIf="jobDetails.positions">{{ jobDetails.positions }}</h3>
+        <h3 *ngIf="jobDetails.skills">{{ jobDetails.skills }}</h3>
+        <p *ngIf="jobDetails.experience && jobDetails.location && jobDetails.ctc">{{ jobDetails.experience }} {{ jobDetails.location }} {{ jobDetails.ctc }}</p>
+    </div>
+
+    <div class="card shadow border-0 mb-7">
+        <div class="card-header">
+            <h5 class="mb-0">Applications List</h5>
+        </div>
+        <div>
+            <div class="table-responsive">
+                <table class="table table-hover table-nowrap">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Cand No</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Skills</th>
+                            <th scope="col">Job Type</th>
+                            <th scope="col">Exp </th>
+                            <th scope="col">CTC Current</th>
+                            <th scope="col">CTC Expected</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Notice Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of applications ; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.candidateid}}</td>
+                            <td>{{item.skills}}</td>
+                            <td>{{item.jobtype}}</td>
+                            <td>{{item.experience}}</td>
+                            <td>{{item.ctccurrent}}</td>
+                            <td>{{item.ctcexpected}}</td>
+                            <td>{{item.relocate}}</td>
+                            <td>{{item.noticeperiod}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="card-footer border-0 py-5">
+            <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+        </div> -->
+    </div>
+
+</div>    

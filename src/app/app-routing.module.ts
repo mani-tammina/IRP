@@ -10,6 +10,8 @@ import { CanditateComponent } from './canditate/canditate.component';
 import { StatusComponent } from './status/status.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { AuthGuard } from './auth.guard';
+import { JobdetailsComponent } from './jobdetails/jobdetails.component';
 
 
 const routes: Routes = [
@@ -17,13 +19,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot', component: ForgotComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'jobcreate', component: JobcreateComponent },
-  { path: 'applyjob', component: ApplyjobComponent },
+  { path: 'jobdetails/:id', component: JobdetailsComponent },
+  { path: 'applyjob/:id', component: ApplyjobComponent },
   { path: 'canditate', component: CanditateComponent },
   { path: 'status', component: StatusComponent },
   { path: 'interviewer', component: InterviewerComponent },
-  { path: 'schedule', component: ScheduleComponent }
+  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

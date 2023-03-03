@@ -1,14 +1,16 @@
 var mongoose = require('mongoose');
 
 var applicationSchema = new mongoose.Schema({
-    jobstitle: String,
-    jobDescription: String,
-    experience: String,
-    CTCExpected: String,
-    Relocate: String,
-    NoticePeriod: String,
-    JobType: String,
-    description: String
+    jobid:String,
+    candidateid:String,
+  experience: String,
+  ctccurrent: String,
+  ctcexpected: String,
+  relocate: String,
+  noticeperiod: String,
+  jobtype: String,
+  skills: String,
+  status: String,
 });
 
 module.exports = mongoose.model(

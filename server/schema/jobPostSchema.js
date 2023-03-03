@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 
 var jobPostsSchema = new mongoose.Schema({
+    userId: String,
     jobtitle: String,
-    jobdesc: String,
     jobtype: String,
-    requirement: String,
     skills: String,
+    qualification: String,
+    positions: String,
     experience: String,
     ctc: String,
     location: String,

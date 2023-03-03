@@ -48,31 +48,33 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="recruiter()">
-                            <i class="bi bi-bar-chart"></i> Recruiter
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" (click)="management()">
-                            <i class="bi bi-chat"></i> Management
-                            <!-- <span
-                                class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span> -->
+                            <i class="bi bi-menu-up"></i> Create Jobs
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="interviewer()">
-                            <i class="bi bi-bookmarks"></i> Interviewer
+                            <i class="bi bi-diagram-3-fill"></i> Applicants
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" (click)="user()">
-                            <i class="bi bi-people"></i> Users
+                      <li class="nav-item">
+                        <a class="nav-link" (click)="management()">
+                            <i class="bi bi-people"></i> Interviewed canditates
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" (click)="management()">
+                            <i class="bi bi-people-fill"></i> Applicants -->
+                            <!-- <span
+                                class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span> -->
+                        <!-- </a>
+                    </li> -->
+                   
+                  
+                    <!-- <li class="nav-item">
                         <a class="nav-link" routerLink="/canditate">
-                            <i class="bi bi-clock-history"></i> Jobs
+                            <i class="bi bi-clock-history"></i> canditate Form
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <hr class="navbar-divider my-5 opacity-20">
                 <div class="mt-auto"></div>
@@ -91,17 +93,11 @@
                         </div>
                         <div class="col-sm-6 col-12 text-sm-end">
                             <div class="mx-n1">
-                                <a href="#" class="btn d-inline-flex btn-sm btn-neutral border-base mx-1">
-                                    <span class=" pe-2">
-                                        <i class="bi bi-pencil"></i>
-                                    </span>
-                                    <span>Edit</span>
-                                </a>
                                 <a routerLink="/jobcreate" class="btn d-inline-flex btn-sm btn-primary mx-1">
                                     <span class=" pe-2">
-                                        <i class="bi bi-plus"></i>
+                                        <i class="bi bi-plus-square"></i>
                                     </span>
-                                    <span>Create</span>
+                                    <span>Create a Job</span>
                                 </a>
                             </div>
                         </div>
@@ -171,7 +167,7 @@
                                     <div class="col">
                                         <span class="h6 font-semibold text-muted text-sm d-block mb-2">Positions Filled
                                         </span>
-                                        <span class="h3 font-bold mb-0">33</span>
+                                        <span class="h3 font-bold mb-0">50</span>
                                     </div>
                                     <div class="col-auto">
                                         <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
@@ -225,44 +221,43 @@
                             <table class="table table-hover table-nowrap">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">jobid</th>
-                                        <th scope="col">jobstitle</th>
-                                        <th scope="col">jobDescription</th>
-                                        <th scope="col">experience</th>
-                                        <th scope="col">CTCExpected</th>
-                                        <th scope="col">Relocate</th>
-                                        <th scope="col">NoticePeriod</th>
-                                        <th scope="col">JobType</th>
-                                        <th scope="col">description</th>
-                                        <th></th>
+                                        <th scope="col">No</th>
+                                        <th scope="col">job Title</th>
+                                        <th scope="col">Skills</th>
+                                        <th scope="col">Job Type</th>
+                                        <th scope="col">Exp Required</th>
+                                        <th scope="col">CTC offered</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Join Period</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let job of getapplication ; let i=index">
-                                        <td>{{job._id}}</td>
-                                        <td>{{job.jobstitle}}</td>
-                                        <td>{{job.jobDescription}}</td>
+                                    <tr *ngFor="let job of jobList ; let i=index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{job.jobtitle}}</td>
+                                        <td>{{job.skills}}</td>
+                                        <td>{{job.jobtype | titlecase}}</td>
                                         <td>{{job.experience}}</td>
-                                        <td>{{job.CTCExpected}}</td>
-                                        <td>{{job.Relocate}}</td>
-                                        <td>{{job.NoticePeriod}}</td>
-                                        <td>{{job.JobType}}</td>
-                                        <td>{{job.description}}</td>
+                                        <td>{{job.ctc}}</td>
+                                        <td>{{job.location}}</td>
+                                        <td>{{job.joinperiod}}</td>
                                         <td class="text-end">
-                                            <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                            <button type="button"
+                                            <a class="btn btn-sm btn-neutral"(click)="viewJob(job._id)">View Job</a>
+                                            <a class="btn btn-sm btn-neutral" (click)="applyJob(job._id)">Apply Job</a>
+                                            <!-- <button type="button"
                                                 class="btn btn-sm btn-square btn-neutral text-danger-hover">
                                                 <i class="bi bi-trash"></i>
-                                            </button>
+                                            </button> -->
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer border-0 py-5">
+                    <!-- <div class="card-footer border-0 py-5">
                         <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

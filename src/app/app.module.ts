@@ -24,6 +24,8 @@ import { RecruiterComponent } from './recruiter/recruiter.component';
 import { ManagementComponent } from './management/management.component';
 import { InterviewerComponent } from './interviewer/interviewer.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { AuthGuard } from './auth.guard';
+import { JobdetailsComponent } from './jobdetails/jobdetails.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
     RecruiterComponent,
     ManagementComponent,
     InterviewerComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    JobdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [ AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

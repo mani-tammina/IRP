@@ -53,4 +53,16 @@ export class ApiServicesService {
   sendMails(list: any) {
     return this.http.post('http://localhost:3000/email/sendMails', list)
   }
+
+  getJobByID(id:any) {
+    return this.http.get('http://localhost:3000/api/getJobByID/'+ id)
+  }
+
+  getAppByJobID(id:any) {
+    return this.http.get('http://localhost:3000/api/getAppByJobID/'+ id)
+  }
+
+  getJobsByUserID(id:any) {
+    return this.http.get('http://localhost:3000/api/getJobsByUserID/'+ id)
+  }
 }

@@ -24,50 +24,54 @@ export class JobcreateComponent implements OnInit {
   ngOnInit() {
     this.jobcreate = this.formbuilder.group({
       jobtitle: ['', Validators.required],
+      jobtype: ['', Validators.required],
+      skills: ['', Validators.required],
       experience: ['', Validators.required],
-      jobdesc: ['', Validators.required],
+      qualification: ['', ],
       joinperiod: ['', Validators.required],
-      ctc: ['', Validators.required],
-      skills: [''],
-      requirement: [''],
-      location: [''],
-      status: ['', Validators.required],
+      ctc: ['', ],
+      positions: ['', ],
+      location: ['', ],
+      status: [''],
     })
   }
   submit() {
+    this.userlist.userId = sessionStorage.getItem('userId')
     this.userlist.jobtitle = this.jobcreate.value.jobtitle
+    this.userlist.jobtype = this.jobcreate.value.jobtype
     this.userlist.experience = this.jobcreate.value.experience
     this.userlist.location = this.jobcreate.value.location
-    this.userlist.requirement = this.jobcreate.value.requirement
+    this.userlist.positions = this.jobcreate.value.positions
     this.userlist.skills = this.jobcreate.value.skills
-    this.userlist.jobdesc = this.jobcreate.value.jobdesc
+    this.userlist.qualification = this.jobcreate.value.qualification
     this.userlist.joinperiod = this.jobcreate.value.joinperiod
     this.userlist.ctc = this.jobcreate.value.ctc
-    this.userlist.status = this.jobcreate.value.status
+    this.userlist.status = 'pending'
     console.log(this.userlist)
 
-    if (this.jobcreate.valid) {
+    // if (this.jobcreate.valid) {
       this.auth.saveJob(this.userlist).subscribe(res => {
         console.log(res);
-      });
-      this.jobcreate.reset();
-      if (this.userlist) {
         Swal.fire("successfully job created");
-      }
-    } else {
-      Swal.fire("Please fill all the fields");
-    }
+        this.jobcreate.reset();
+      });
+
+    // } else {
+    //   Swal.fire("Please fill all the fields");
+    // }
   }
 }
 
 export class userDetails {
+  userId: any;
   jobtitle: any;
-  jobdesc: any;
+  jobtype: any;
+  qualification: any;
   experience: any;
   joinperiod: any;
   location: any;
   skills: any;
   ctc: any;
   status: any;
-  requirement: any;
+  positions: any;
 }
