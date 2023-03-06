@@ -49,9 +49,7 @@ export class ApplyjobComponent {
     this.canditateList.jobtype = this.canditate.value.JobType
     this.canditateList.skills = this.canditate.value.skills
     this.canditateList.status = 'pending'
-    console.log(this.canditateList)
     this.http.saveApplication(this.canditateList).subscribe((res:any) => {
-      console.log(res);
       if(res) {
         Swal.fire("successfully applied!");
         this.canditate.reset();
